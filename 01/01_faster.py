@@ -8,7 +8,7 @@ def find_combination_sum(tail, n_values, target_sum):
         if (n_values == 1) and (head == target_sum):
             return head
         
-        if n_values > 1:
+        elif n_values > 1:
             v = find_combination_sum(tail, n_values - 1, target_sum - head)
             if v:
                 return head * v
