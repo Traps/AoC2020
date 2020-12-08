@@ -1,15 +1,15 @@
 def count_collisions(slope_map, x_step, y_step):
-    slope_height = len(slope_map)
     slope_width = len(slope_map[0])
 
     n_trees_hit = 0
     x_pos = 0
-    for y_pos in range(0, slope_height, y_step):
+    for y_pos in range(0, len(slope_map), y_step):
         n_trees_hit += (slope_map[y_pos][x_pos] == '#')
 
         x_pos = (x_pos + x_step) % (slope_width - 1)
 
     return n_trees_hit
+
 
 with open("input", "r") as input_file:
     tree_strings = list(input_file)
